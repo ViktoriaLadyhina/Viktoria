@@ -8,7 +8,7 @@ public class Calculator {
         System.out.println("sum = " + getSum(a, b));
         System.out.println("sub = " + getSub(a, b));
         System.out.println("mul = " + getMul(a, b));
-        System.out.println("dev = " +  getDev(a, b));
+        System.out.println("dev = " + getDev(a, b));
     }
 
     public int getDev(int a, int b) {
