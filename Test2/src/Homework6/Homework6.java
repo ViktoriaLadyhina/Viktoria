@@ -19,14 +19,14 @@ public class Homework6 {
         System.out.println("Введите второе слово");
         String word2 = scanner.nextLine();
 
-        if (metod.isEvenLength(word1) && metod.isEvenLength(word2)) {
-            String combinedWord = metod.combineWords(word1,word2);
-            System.out.println(combinedWord);
+        if (Math6.checkEven(word1) && Math6.checkEven(word2)) { // если четное слово 1 и четное слово 2
+            String combidWord = Math6.combiWords(word1,word2);
+            System.out.println(combidWord);
         } else {
-            System.out.println("Одно или оба слова не имеют четное количество букв.");
+            System.out.println("Не четное количество букв в слове");
         }
 
-        scanner.close();
+
 
 
 
