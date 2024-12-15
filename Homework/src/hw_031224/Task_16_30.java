@@ -85,7 +85,7 @@ public class Task_16_30 {
         int n = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] != 0){
-                array2[n++] = array[i]; // не совсем поняла
+                array2[n++] = array[i];
             }
         }
         System.out.println("Удалить все нули из массива и сдвинуть элементы влево: " + (Arrays.toString(array2)));
@@ -113,20 +113,7 @@ public class Task_16_30 {
 // 1 метод - через метод Arrays.sort:
 // Arrays.sort(array);
 
-// 2 метод:
-//        for (int i = 0; i < array.length; i++) {
-//            int indexMin = i;
-//            for (int j = i; j < array.length; j++) {
-//                if (array[indexMin] > array[j]) {
-//                    indexMin = j;
-//                }
-//            }
-//            int temp = array[i];
-//            array[i] = array[indexMin];
-//            array[indexMin] = temp;
-//        }
-
-// 3 метод: пузырьковый метод:
+// Пузырьковый метод:
         for (int i = 0; i < array.length - 1; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
@@ -202,7 +189,7 @@ public class Task_16_30 {
                 if (array[i] == array[j] && i != j){
                     break;
                 }
-                if (j == array.length - 1){ // опять не понятно
+                if (j == array.length - 1){
                     count++;
                 }
             }
@@ -232,17 +219,21 @@ public class Task_16_30 {
     // 28. Найти длину самой длинной последовательности одинаковых элементов.
     public static void task28() {
         int[] array = {1, 1, 2, 2, 2, 3};
-        System.out.println("-28. Было: " + (Arrays.toString(array)));
+        System.out.println("+28. Было: " + (Arrays.toString(array)));
         int max = 1;
         int cur = 1;
-        for (int i = 1; i < array.length - 1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] == array[i + 1]){
                 cur++;
+            } else {
+                if (cur > max) {
+                    max = cur;
+                    cur = 1;
+                }
+                if (cur > max) {
+                    max = cur;
+                }
             }
-            if (cur > max){
-                max = cur;// не поняла, что делать дальше....
-            }
-            cur = 1; // сброс счетчика
         }
         System.out.println("Найти длину самой длинной последовательности одинаковых элементов: " + max);
 }
@@ -266,28 +257,25 @@ public class Task_16_30 {
     }
 
     // 30. Удалить все дубликаты из массива.
-    // увы, не могу понять
     public static void task30() {
         int[] array = {1, 2, 2, 3, 4, 4, 5};
         System.out.println("+30. Было: " + (Arrays.toString(array)));
 
-        int n = array.length;
-        for (int i = 0, m = 0; i != n; i++, n = m){
-            for (int j = m = i + 1; j != n; j++) {
-                if (array[j] != array[i]) {
-                    if (m != j) array[m] = array[j];
-                    m++;
+        int[] array2 = new int [array.length];
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            boolean dubl = false;
+            for (int j = 0; j < count; j++) {
+                if (array[i] == array2[j]) {
+                    dubl = true;
+                    break;
                 }
             }
+            if (!dubl) {
+            array2[count++] = array[i];
+            }
         }
-        if (n != array.length){
-            int[] b = new int[n];
-            for (int i = 0; i < n; i++) b[i] = array[i];
-            array = b;
-        }
-        for (int x : array) {
-
-        }
-            System.out.println("Удалить все дубликаты из массива: " + (Arrays.toString(array)));
+        int[] array3 = Arrays.copyOf(array2, count);
+            System.out.println("Удалить все дубликаты из массива: " + (Arrays.toString(array3)));
     }
 }

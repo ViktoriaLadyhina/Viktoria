@@ -58,14 +58,14 @@ public class Task_1_10 {
         String[] array = {"apple", "banana", "cherry"};
         System.out.println("+3. Было: " + (Arrays.toString(array)));
         String target = "banana";
-        boolean n = false;
+        boolean givNumber = false;
         for (int i = 0; i < array.length; i++) {
             if (array[i].equals(target)){ // сравнение
-                n = true;
+                givNumber = true;
                 break;
             }
         }
-        System.out.println("Проверить, содержит ли массив строк заданное слово: " + n);
+        System.out.println("Проверить, содержит ли массив строк заданное слово: " + givNumber);
     }
 
     // 4. Подсчитать количество строк, содержащих заданный символ.
@@ -111,17 +111,17 @@ public class Task_1_10 {
         String[] array = {"apple pie", "banana bread", "cherry tart"};
         System.out.println("+6. Было: " + (Arrays.toString(array)));
         String target = "bread";
-        String n = "";
+        String del = "";
         int count = 0;
 
         for (int i = 0; i < array.length; i++) {
             if (array[i].contains(target)){
-                n = array[i];
+                del = array[i];
                 count++;
             }
         }
         List<String> list = new ArrayList<>(Arrays.asList(array)); // преобразование массива в лист через метод
-        list.remove(n);
+        list.remove(del);
 
         String[] array2;
         array2 = new String[array.length - count]; // создание нового массива с длиной меньшей, чем было в старом
@@ -138,7 +138,7 @@ public class Task_1_10 {
         for (int i = 0; i < array.length; i++) {
             if (min > array[i]){
                 min = array[i];
-        }
+            }
         }
         System.out.println("Найти минимальный элемент массива целых чисел: " + min);
     }
@@ -162,7 +162,7 @@ public class Task_1_10 {
     public static void task9() {
         int[] array = {1, 2, 3, 4, 5};
         System.out.println("+9. Было: " + (Arrays.toString(array)));
-    int count = 0;
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 == 0){
                 count++;

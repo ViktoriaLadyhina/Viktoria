@@ -208,18 +208,18 @@ public class Task_1_15 {
     }
 
     // 14. Найти второй по величине элемент массива.
-    // !! не понимаю, где я ошиблась....
     public static void task14() {
         int[] array = {1, -2, 3, -4};
-        System.out.println("-14. Было: " + (Arrays.toString(array)));
+        System.out.println("+14. Было: " + (Arrays.toString(array)));
         int firstMin = array[0];
         int secondMin = array[0];
 
-        for (int i = 0; i < array.length; i++) {
-            if (firstMin > array[i]){
-            firstMin = array[i];
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < firstMin){
+                secondMin = firstMin;
+                firstMin = array[i];
             }
-            if (secondMin > array[i] && secondMin != firstMin){
+            if (array[i] > secondMin && array[i] > firstMin){
                     secondMin = array[i];
             }
         }
@@ -229,7 +229,7 @@ public class Task_1_15 {
 
     // 15. Переставить элементы массива в обратном порядке.
     public static void task15() {
-        int[] array = {1, 2, 8, 3, 4, 10};
+        int[] array = {1, 2, 3, 4};
         System.out.println("+15. Было: " + (Arrays.toString(array)));
         for (int i = 0; i < array.length / 2; i++) {
         int a = array[i];
