@@ -58,7 +58,6 @@ public class Company {
 
         Company company = new Company("LLL", "London", "John", arrDepartments);
 
-
         System.out.print("Сотрудники, у которых зарплата больше, чем 5000: ");
         company.printEmployeesSalary(5000);
 

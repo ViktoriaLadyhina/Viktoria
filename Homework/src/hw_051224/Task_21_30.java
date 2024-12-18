@@ -78,15 +78,15 @@ public class Task_21_30 {
         String[] array = {"level", "hello", "radar", "world"};
         System.out.println("-23. Было: " + (Arrays.toString(array)));
 
-//        boolean n = false;
-//        for (int i = 0; i < array.length / 2; i++) {
-//            if (array[i].charAt(i) == array[i].charAt(array.length) - i - 1){
-//                n = true;
-//                break;
-//            }
-//        }
-//        System.out.println(n);
-    }
+                for (int i = 0; i < array.length; i++) {
+                    for (int j = 0; j < array[i].length() / 2; j++) {
+                        if (array[i].charAt(j) == array[i].charAt(array[i].length() - j -1)){
+                            System.out.println(array[i] + " - это палиндром");
+                            break;
+                        }
+                    }
+                }
+            }
 
     // 24. Поиск всех подстрок в строках массива, соответствующих заданному шаблону.
     public static void task24() {
@@ -199,20 +199,43 @@ public class Task_21_30 {
     // 30. Создать массив строк, содержащих только уникальные символы.
     public static void task30() {
         String[] array = {"apple", "banana", "cat", "dog", "race"};
-        System.out.println("-30. Было: " + (Arrays.toString(array)));
+        System.out.println("+30. Было: " + (Arrays.toString(array)));
+        String allWords = array[0];
 
+        for (int i = 1; i < array.length; i++) {
+            allWords += array[i];
+        }
 
-//        String[] uniqueSymbols = new String[array.length];
-//        int index = 0;
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array.length; j++) {
-//                if (array[i].charAt(i) == array[j].charAt(j) && j != i) {
-//                    uniqueSymbols[index] = array[i];
-//                    index++;
-//                }
-//            }
-//        }
-//        System.out.println(Arrays.toString(uniqueSymbols));
+        boolean isUnique = true;
+        int countUniqueLetters = 0;
+        for (int i = 0; i < allWords.length(); i++) {
+            for (int j = 1; i >= j; j++) {
+                if (allWords.charAt(i) == allWords.charAt(i-j)) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique) {
+                countUniqueLetters++;
+            }
+            isUnique = true;
+        }
+
+        String[] arrayUniqueLetters = new String[countUniqueLetters];
+        int k = 0;
+        for (int i = 0; i < allWords.length(); i++) {
+            isUnique = true;
+            for (int j = 1; i >= j; j++) {
+                if (allWords.charAt(i) == allWords.charAt(i-j)) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique) {
+                arrayUniqueLetters[k] = String.valueOf(allWords.charAt(i));
+                k++;
+            }
+        }
+        System.out.println("arrayUniqueLetters = " + Arrays.toString(arrayUniqueLetters));
     }
-
 }
