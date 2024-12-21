@@ -1,4 +1,4 @@
-package hw_19122024;
+package hw_191224;
 
 import java.util.Arrays;
 
@@ -126,10 +126,10 @@ class T2 {
         System.out.println(power(5, 4));
 
         System.out.print("13 Задача: ");
-        System.out.println(isPrime(5) + " ------------------ не понятно");
+        System.out.println(isPrime(5));
 
         System.out.print("14 Задача: ");
-        System.out.println(gcd(10, 20) + " ------------------ не понятно");
+        System.out.println(gcd(10, 20));
 
         System.out.print("15 Задача: ");
         System.out.println(maxInArray(numbers));
@@ -141,12 +141,12 @@ class T2 {
         System.out.println(isPalindrome(1222));
 
         System.out.print("18 Задача: ");
-        System.out.println(fibonacci(8)  + " ------------------ не понятно");
+        System.out.println(fibonacci(8));
 
         System.out.print("19 Задача: ");
         System.out.println(Arrays.toString(sortArray(numbers)));
 
         System.out.print("20 Задача: ");
-        System.out.println(lcm(10, 20) + " ------------------ не понятно");
+        System.out.println(lcm(10, 20));
     }
 }

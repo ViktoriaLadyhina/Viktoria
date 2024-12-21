@@ -1,6 +1,6 @@
-package hw_19122024;
+package hw_191224;
 
-public class Task1 {
+public class T01 {
 
 // 1. Напишите метод, который принимает два целых числа и возвращает их сумму.
     public static int add(int a, int b) {
@@ -95,9 +95,6 @@ public class Task1 {
 
         System.out.print("10 Задача: ");
         System.out.println(isEven(8));
-
-
-
 
     }
 }
