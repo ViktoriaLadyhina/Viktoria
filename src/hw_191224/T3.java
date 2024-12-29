@@ -124,6 +124,8 @@ public class T3 {
 
     public static void main(String[] args) {
         int[] exampleArray = {1, 2, 3, 4, 5, 6, 8};
+        System.out.println(Arrays.toString(exampleArray));
+
         System.out.print("1 задача: ");
         System.out.println(getArrayLength(exampleArray));
 

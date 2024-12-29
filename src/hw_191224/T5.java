@@ -1,23 +1,32 @@
-package com.app._19_12_2024;
+package hw_191224;
 
 public class T5 {
 
-
-    /**
-     * 1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2.
-     */
+// 1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2.
     public static int[][] generateSubArrays(int[] array) {
-        // TODO: реализовать метод
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] <= 10 && array[i] >= 99){
+                System.out.println(array[i]);
+            }
+        }
         return new int[0][0];
     }
 
     /**
      * 2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом.
      */
-    public static boolean isArrayPalindrome(int[] array) {
-        // TODO: реализовать метод
-        return false;
-    }
+//    public static boolean isArrayPalindrome(int[] array) {
+//        boolean n = false;
+//        int w = word.lengt;
+//        for (int i = 0; i < array.length; i++) {
+//            for (int j = 0; j < array[i] / 2; j++) {
+//                if (){
+//                    n = true;
+//                }
+//        }
+//        return n;
+//    }
+//    }
 
     /**
      * 3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент.
@@ -92,7 +101,8 @@ public class T5 {
 
     public static void main(String[] args) {
         // Пример вызовов методов (после их реализации)
-        // int[] exampleArray = {1, 2, 3, 4, 5};
-        // System.out.println(Arrays.deepToString(generateSubArrays(exampleArray)));
+         int[] exampleArray = {1, 2, 3, 4, 5, 66, 52};
+
+ //        System.out.println(generateSubArrays(exampleArray));
     }
 }
