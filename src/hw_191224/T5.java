@@ -25,46 +25,53 @@ public class T5 {
         return arr;
     }
 
-    /**
-     * 2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом.
-     */
+// 2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом.
     public static boolean isArrayPalindrome(int[] arr) {
-        boolean n = false;
-
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = arr.length; j > 0; j--) {
-                if (arr[i] == arr[j-1] ){
-                    n = true;
+        for (int i = 0; i < arr.length/2; i++) {
+                if (arr[i] != arr[arr.length - i - 1] ){
+                    return false;
                 }
-            }
         }
-        return n;
+        return true;
     }
 
-    /**
-     * 3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент.
-     */
+// 3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент.
+
     public static int findMostFrequentElement(int[] array) {
-        return 0;
+        int maxCount = 0;
+        int el = array[0];
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                el = array[i];
+            }
+        }
+        return el;
     }
 
 // 4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки.
-//    public static int[] sortArrayManually(int[] array) {
-//        boolean isSorted = false;
-//        int tmp;
-//        while (!isSorted) {
-//            isSorted = true;
-//            for (int i = 0; i < array.length - 1; i++) {
-//                if (array[i] > array[i + 1]) {
-//                    tmp = array[i];
-//                    array[i] = array[i + 1];
-//                    array[i + 1] = tmp;
-//                    isSorted = false;
-//                }
-//            }
-//        }
-//        return array;
-//    }
+    public static int[] sortArrayManually(int[] array) {
+        boolean isSorted = false;
+        int tmp;
+        while (!isSorted) {
+            isSorted = true;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                    isSorted = false;
+                }
+            }
+        }
+        return array;
+    }
 
     /**
      * 5. Напишите метод, который принимает массив целых чисел и
@@ -102,13 +109,18 @@ public class T5 {
         return new int[0];
     }
 
-    /**
-     * 9. Напишите метод, который принимает массив целых чисел и
-     * возвращает true, если в массиве есть дублирующиеся элементы.
-     */
+// 9. Напишите метод, который принимает массив целых чисел и возвращает true, если в массиве есть дублирующиеся элементы.
     public static boolean hasDuplicates(int[] array) {
-        // TODO: реализовать метод
-        return false;
+        boolean dubl = false;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length-1; j++) {
+                if (array[i] == array[j]){
+                    dubl = true;
+                    break;
+                }
+            }
+        }
+        return dubl;
     }
 
     /**
@@ -121,12 +133,13 @@ public class T5 {
     }
 
     public static void main(String[] args) {
-         int[] exampleArray = {1, 2, 5, 54, 65, 99};
+         int[] exampleArray = {1, 2, 5, 54, 65, 1221, 99, 65};
         System.out.println(Arrays.toString(exampleArray));
 
          System.out.println("+1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2: " + Arrays.toString(generateSubArrays(exampleArray)));
          System.out.println("-2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом: " + isArrayPalindrome(exampleArray));
-
-         //System.out.println("4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки: " + Arrays.toString(sortArrayManually(exampleArray)));
+         System.out.println("+3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент: " + findMostFrequentElement(exampleArray));
+         System.out.println("+4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки: " + Arrays.toString(sortArrayManually(exampleArray)));
+         System.out.println("+9. Напишите метод, который принимает массив целых чисел и возвращает true, если в массиве есть дублирующиеся элементы: " + hasDuplicates(exampleArray));
     }
 }

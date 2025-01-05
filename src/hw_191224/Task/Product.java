@@ -1,5 +1,7 @@
 package hw_191224.Task;
 
+import hw_191224.TaskE3.Category;
+
 public class Product {
     int id;
     String name;
@@ -67,5 +69,15 @@ public class Product {
                 ", description='" + description + '\'' +
                 ", inStock=" + inStock +
                 '}';
+    }
+
+// с условия задачи 2 класса Е3:
+
+    Category category = new Category();
+    double discount;
+
+    public double calculateFinalPrice(double price, double discount) {
+        double totalPrice = price - discount;
+        return totalPrice;
     }
 }

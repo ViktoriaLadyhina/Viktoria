@@ -8,11 +8,6 @@ public class Order {
     static ArrayList<Product> productList = new ArrayList<>();
     double totalAmount = contTotalPriceOrderList(productList);
 
-// *    - id (уникальный идентификатор заказа, тип int)
-// *    - customer (объект класса Customer)
-// *    - productList (список продуктов, тип List<Product>)
-// *    - totalAmount (общая сумма заказа, тип double)
-
 
     public Order(int id, Customer customer, double totalAmount) {
         this.id = id;

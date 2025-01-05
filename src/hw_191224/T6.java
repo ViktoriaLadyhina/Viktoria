@@ -86,7 +86,6 @@ public class T6 {
      * 10. Напишите метод, который принимает массив строк и возвращает массив строк в верхнем регистре.
      */
     public static String[] convertToUpperCase(String[] array) {
-//        String strUpper = array.toUpperCase();
         String strUpper = "";
         String[] strUpp = new String[array.length];
         int index = 0;

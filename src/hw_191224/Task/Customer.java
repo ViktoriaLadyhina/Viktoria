@@ -1,5 +1,10 @@
 package hw_191224.Task;
 
+import hw_191224.TaskE3.Address;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Customer {
      int id;
      String firstName;
@@ -68,4 +73,13 @@ public class Customer {
           ", phoneNumber='" + phoneNumber + '\'' +
           '}';
  }
+
+// с условия задачи 4 класса Е3:
+    ArrayList<Address> addresses = new ArrayList<>();
+
+    public void addAddress(Address address){
+       addresses.add(address);
+    }
+
+
 }
