@@ -1,49 +1,70 @@
 package hw_191224;
 
+import java.util.Arrays;
+
 public class T5 {
 
 // 1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2.
-    public static int[][] generateSubArrays(int[] array) {
+    public static int[] generateSubArrays(int[] array) {
+        int count = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] <= 10 && array[i] >= 99){
-                System.out.println(array[i]);
+            if (array[i] >= 10 && array[i] <= 99){
+                count++;
             }
         }
-        return new int[0][0];
+
+        int[] arr= new int[count];
+        int index = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] >= 10 && array[i] <= 99){
+                arr[index] = array[i];
+                index++;
+            }
+        }
+        return arr;
     }
 
     /**
      * 2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом.
      */
-//    public static boolean isArrayPalindrome(int[] array) {
-//        boolean n = false;
-//        int w = word.lengt;
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array[i] / 2; j++) {
-//                if (){
-//                    n = true;
-//                }
-//        }
-//        return n;
-//    }
-//    }
+    public static boolean isArrayPalindrome(int[] arr) {
+        boolean n = false;
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = arr.length; j > 0; j--) {
+                if (arr[i] == arr[j-1] ){
+                    n = true;
+                }
+            }
+        }
+        return n;
+    }
 
     /**
      * 3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент.
      */
     public static int findMostFrequentElement(int[] array) {
-        // TODO: реализовать метод
         return 0;
     }
 
-    /**
-     * 4. Напишите метод, который принимает массив целых чисел и
-     * сортирует его без использования встроенных методов сортировки.
-     */
-    public static int[] sortArrayManually(int[] array) {
-        // TODO: реализовать метод
-        return array;
-    }
+// 4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки.
+//    public static int[] sortArrayManually(int[] array) {
+//        boolean isSorted = false;
+//        int tmp;
+//        while (!isSorted) {
+//            isSorted = true;
+//            for (int i = 0; i < array.length - 1; i++) {
+//                if (array[i] > array[i + 1]) {
+//                    tmp = array[i];
+//                    array[i] = array[i + 1];
+//                    array[i + 1] = tmp;
+//                    isSorted = false;
+//                }
+//            }
+//        }
+//        return array;
+//    }
 
     /**
      * 5. Напишите метод, который принимает массив целых чисел и
@@ -100,9 +121,12 @@ public class T5 {
     }
 
     public static void main(String[] args) {
-        // Пример вызовов методов (после их реализации)
-         int[] exampleArray = {1, 2, 3, 4, 5, 66, 52};
+         int[] exampleArray = {1, 2, 5, 54, 65, 99};
+        System.out.println(Arrays.toString(exampleArray));
 
- //        System.out.println(generateSubArrays(exampleArray));
+         System.out.println("+1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2: " + Arrays.toString(generateSubArrays(exampleArray)));
+         System.out.println("-2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом: " + isArrayPalindrome(exampleArray));
+
+         //System.out.println("4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки: " + Arrays.toString(sortArrayManually(exampleArray)));
     }
 }
