@@ -1,13 +1,14 @@
 package hw_191224.Task;
 
-import hw_191224.TaskE3.Category;
-
 public class Product {
-    int id;
-    String name;
-    double price;
-    String description;
-    boolean inStock; // наличие на складе
+    private int id;
+    private String name;
+    private double price;
+    private String description;
+    private boolean inStock; // наличие на складе
+    private Category category; // с условия задачи 2 класса Е3
+    private double discount; // с условия задачи 2 класса Е3
+
 
     public Product() {
     }
@@ -18,6 +19,17 @@ public class Product {
         this.price = price;
         this.description = description;
         this.inStock = inStock;
+    }
+
+    // Конструктор с параметрами с условия задачи 2 класса Е3
+    public Product(int id, String name, double price, String description, boolean inStock, Category category, double discount) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.inStock = inStock;
+        this.category = category;
+        this.discount = discount;
     }
 
     public int getId() {
@@ -60,24 +72,31 @@ public class Product {
         this.inStock = inStock;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", inStock=" + inStock +
-                '}';
+    // с условия задачи 2 класса Е3:
+
+    public Category getCategory() {
+        return category;
     }
 
-// с условия задачи 2 класса Е3:
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-    Category category = new Category();
-    double discount;
+    public double getDiscount() {
+        return discount;
+    }
 
-    public double calculateFinalPrice(double price, double discount) {
-        double totalPrice = price - discount;
-        return totalPrice;
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
+
+    //метод, который возвращает цену продукта с учётом скидки
+    public double calculateFinalPrice() {
+        return price - (price * discount / 100);
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + ", description='" + description + '\'' + ", inStock=" + inStock + ", category=" + category + ", discount=" + discount + '}';
     }
 }

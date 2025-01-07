@@ -44,8 +44,6 @@ public class TotalE2 {
             order1.setCustomer(customer2);
             order1.setTotalAmount(2);
 
-        Order order2 = new Order();
-        Order order3 = new Order();
 
 // Проверка методов класса Product:
         System.out.println("-------------------");
@@ -74,4 +72,5 @@ public class TotalE2 {
         System.out.println("getTotalAmount: " + order1.getTotalAmount());
 
     }
+
 }

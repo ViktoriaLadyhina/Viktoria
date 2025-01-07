@@ -1,16 +1,18 @@
 package hw_191224.Task;
 
-import hw_191224.TaskE3.Address;
-
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class Customer {
-     int id;
-     String firstName;
-     String lastName;
-     String email;
-     String phoneNumber;
+   private int id;
+   private String firstName;
+   private String lastName;
+   private String email;
+   private String phoneNumber;
+   private Address addresses; // с условия задачи 4 класса Е3
+
+
+   private List<Address> addresses2; // с условия задачи 4 класса Е3
 
  public Customer() {
  }
@@ -21,6 +23,18 @@ public class Customer {
   this.lastName = lastName;
   this.email = email;
   this.phoneNumber = phoneNumber;
+ }
+
+ // Конструктор с параметрами с условия задачи 4 класса Е3
+
+
+ public Customer(int id, String firstName, String lastName, String email, String phoneNumber, Address addresses) {
+  this.id = id;
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.email = email;
+  this.phoneNumber = phoneNumber;
+  this.addresses = addresses;
  }
 
  public int getId() {
@@ -71,14 +85,13 @@ public class Customer {
           ", lastName='" + lastName + '\'' +
           ", email='" + email + '\'' +
           ", phoneNumber='" + phoneNumber + '\'' +
-          '}';
+          ", addresses=" + addresses + '}';
  }
 
 // с условия задачи 4 класса Е3:
-    ArrayList<Address> addresses = new ArrayList<>();
 
     public void addAddress(Address address){
-       addresses.add(address);
+       this.addresses2.add(address);
     }
 
 
