@@ -1,5 +1,7 @@
 package hw_191224;
 
+import java.util.Arrays;
+
 public class T10 {
     public class BooleanArrayTasks {
 
@@ -14,11 +16,13 @@ public class T10 {
             return count;
         }
 
-        /**
-         * 2. Напишите метод, который принимает массив логических значений и возвращает true, если все элементы равны true.
-         */
+// 2. Напишите метод, который принимает массив логических значений и возвращает true, если все элементы равны true.
         public static boolean areAllTrue(boolean[] array) {
-            // TODO: реализовать метод
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == true){
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -88,7 +92,11 @@ public class T10 {
 
         public static void main(String[] args) {
              boolean[] exampleArray = {true, false, true, false, true};
-             System.out.println(countTrue(exampleArray));
+            System.out.println(Arrays.toString(exampleArray));
+            System.out.println("--------------");
+
+            System.out.println("1. Напишите метод, который принимает массив логических значений и возвращает количество значений true: " + countTrue(exampleArray));
+            System.out.println("2. Напишите метод, который принимает массив логических значений и возвращает true, если все элементы равны true: " + areAllTrue(exampleArray));
         }
     }
 }
