@@ -2,11 +2,11 @@ package com.app._19_12_2024;
 
 import java.util.Arrays;
 
+
 public class T8 {
 // 1. Напишите метод, который принимает массив символов и возвращает его длину.
     public static int getArrayLength(char[] array) {
-        int leng = array.length;
-        return leng;
+        return array.length;
     }
 
 // 2. Напишите метод, который принимает массив символов и выводит его элементы в консоль.
@@ -25,34 +25,46 @@ public class T8 {
     }
 
 // 5. Напишите метод, который принимает массив символов и возвращает массив в обратном порядке.
-    public static void reverseArray(char[] array) {
+    public static String reverseArray(char[] array) {
+        String revArr = " ";
         for (int i = array.length-1; i >= 0; i--) {
-            System.out.print(array[i] + ", ");
+            revArr = revArr + array[i];
         }
+        return revArr;
+
     }
 
-    /**
-     * 6. Напишите метод, который принимает массив символов и возвращает количество гласных букв в массиве.
-     */
+// 6. Напишите метод, который принимает массив символов и возвращает количество гласных букв в массиве.
     public static int countVowels(char[] array) {
-        // TODO: реализовать метод
-        return 0;
+        int vowelCount = 0;
+        char[] vowels = new char[]{'a', 'o', 'i', 'u', 'e'};
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < vowels.length; j++) {
+                if (array[i] == vowels[j]) {
+                    vowelCount++;
+                }
+            }
+        }
+        return vowelCount;
     }
 
-    /**
-     * 7. Напишите метод, который принимает массив символов и заменяет все буквы на заглавные.
-     */
+// 7. Напишите метод, который принимает массив символов и заменяет все буквы на заглавные.
     public static char[] toUpperCase(char[] array) {
-        // TODO: реализовать метод
-        return new char[0];
+        for (int i = 0; i < array.length; i++) {
+            char c = array[i];
+            array[i] = Character.toUpperCase(c);
+            }
+        return array;
     }
 
-    /**
-     * 8. Напишите метод, который принимает массив символов и проверяет, является ли он палиндромом.
-     */
+// 8. Напишите метод, который принимает массив символов и проверяет, является ли он палиндромом.
     public static boolean isPalindrome(char[] array) {
-        // TODO: реализовать метод
-        return false;
+        for (int i = 0; i < array.length/2; i++) {
+            if (array[i] != array[array.length - i - 1] ){
+                return false;
+            }
+        }
+        return true;
     }
 
 // 9. Напишите метод, который принимает массив символов и возвращает количество пробелов в массиве.
@@ -83,7 +95,10 @@ public class T8 {
     printArray(exampleArray);
     System.out.println("+3. Напишите метод, который принимает массив символов и возвращает первый символ: " + getFirstElement(exampleArray));
     System.out.println("+4. Напишите метод, который принимает массив символов и возвращает последний символ: " + getLastElement(exampleArray));
-    //System.out.println(reverseArray(exampleArray));
+    System.out.println("+5. Напишите метод, который принимает массив символов и возвращает массив в обратном порядке: " + reverseArray(exampleArray));
+    System.out.println("+6. Напишите метод, который принимает массив символов и возвращает количество гласных букв в массиве: " + countVowels(exampleArray));
+    System.out.println("+7. Напишите метод, который принимает массив символов и заменяет все буквы на заглавные: " + Arrays.toString(toUpperCase(exampleArray)));
+    System.out.println("+8. Напишите метод, который принимает массив символов и проверяет, является ли он палиндромом: " + isPalindrome(exampleArray));
     System.out.println("+9. Напишите метод, который принимает массив символов и возвращает количество пробелов в массиве: " + countSpaces(exampleArray));
     System.out.println("+10. Напишите метод, который принимает массив символов и заменяет все цифры на символ '*': " + Arrays.toString(replaceDigitsWithAsterisk(exampleArray)));
     }

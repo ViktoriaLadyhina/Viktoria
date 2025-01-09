@@ -62,8 +62,7 @@ class T2 {
         return min;
     }
 
-// 17. Напишите метод, который проверяет, является ли число палиндромом
-     // (одинаково читается слева направо и справа налево).
+// 17. Напишите метод, который проверяет, является ли число палиндромом (одинаково читается слева направо и справа налево).
     public static boolean isPalindrome(int number) {
         String numStr = Integer.toString(number);
         String reverseStr = new StringBuilder(numStr).reverse().toString();

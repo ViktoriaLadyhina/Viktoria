@@ -6,8 +6,7 @@ public class T6 {
 
 // 1. Напишите метод, который принимает массив строк и возвращает его длину.
     public static int getArrayLength(String[] array) {
-        int leng = array.length;
-        return leng;
+        return array.length;
     }
 
 // 2. Напишите метод, который принимает массив строк и выводит его элементы в консоль.
@@ -121,6 +120,6 @@ public class T6 {
 
          System.out.println("+9. Напишите метод, который принимает массив строк и возвращает количество строк, которые начинаются с заданной буквы: " + countStringsStartingWith(exampleArray, 'c'));
 
-         System.out.println("10. Напишите метод, который принимает массив строк и возвращает массив строк в верхнем регистре: " + Arrays.toString(convertToUpperCase(exampleArray)));
+         System.out.println("+10. Напишите метод, который принимает массив строк и возвращает массив строк в верхнем регистре: " + Arrays.toString(convertToUpperCase(exampleArray)));
     }
 }

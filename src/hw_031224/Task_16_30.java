@@ -266,7 +266,7 @@ public class Task_16_30 {
         for (int i = 0; i < array.length; i++) {
             boolean dubl = false;
             for (int j = 0; j < count; j++) {
-                if (array[i] == array2[j]) {
+                if (i != j && array[i] == array2[j]) {
                     dubl = true;
                     break;
                 }

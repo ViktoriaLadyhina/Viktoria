@@ -76,16 +76,18 @@ public class Task_21_30 {
     // 23. Проверка на палиндром в массиве строк.
     public static void task23() {
         String[] array = {"level", "hello", "radar", "world"};
-        System.out.println("-23. Было: " + (Arrays.toString(array)));
+        System.out.println("+23. Было: " + (Arrays.toString(array)));
 
-                for (int i = 0; i < array.length; i++) {
-                    for (int j = 0; j < array[i].length() / 2; j++) {
-                        if (array[i].charAt(j) == array[i].charAt(array[i].length() - j -1)){
-                            System.out.println(array[i] + " - это палиндром");
-                            break;
-                        }
-                    }
+        boolean n = false;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length() / 2; j++) {
+                if (array[i].charAt(j) == array[i].charAt(array[i].length() - j -1)){
+                    n = true;
+                    break;
                 }
+            }
+        }
+        System.out.println("Проверка на палиндром в массиве строк: " + n);
             }
 
     // 24. Поиск всех подстрок в строках массива, соответствующих заданному шаблону.

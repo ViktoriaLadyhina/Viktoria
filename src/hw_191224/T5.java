@@ -74,26 +74,40 @@ public class T5 {
     }
 
     /**
-     * 5. Напишите метод, который принимает массив целых чисел и
-     * переставляет элементы массива в случайном порядке.
+     * 5. Напишите метод, который принимает массив целых чисел и переставляет элементы массива в случайном порядке.
      */
     public static int[] shuffleArray(int[] array) {
         // TODO: реализовать метод
         return array;
     }
 
-    /**
-     * 6. Напишите метод, который принимает массив целых
-     * чисел и возвращает новый массив с уникальными элементами.
-     */
+// 6. Напишите метод, который принимает массив целых чисел и возвращает новый массив с уникальными элементами.
     public static int[] removeDuplicates(int[] array) {
-        // TODO: реализовать метод
-        return new int[0];
+       int count = 0;
+       int[] arr = new int[array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            boolean dubl = true;
+            for (int j = 0; j < count; j++) {
+                if(array[i] == array[j]){
+                    dubl = false;
+                    break;
+                }
+            }
+            if (dubl){
+                arr[count] = array[i];
+                count++;
+            }
+        }
+        int[] unic = new int[count];
+        for (int i = 0; i < count; i++) {
+                    unic[i] = arr[i];
+        }
+        return unic;
     }
 
     /**
-     * 7. Напишите метод, который принимает массив целых
-     * чисел и возвращает его циклически сдвинутым вправо на k позиций.
+     * 7. Напишите метод, который принимает массив целых чисел и возвращает его циклически сдвинутым вправо на k позиций.
      */
     public static int[] rotateArrayRight(int[] array, int k) {
         // TODO: реализовать метод
@@ -101,8 +115,7 @@ public class T5 {
     }
 
     /**
-     * 8. Напишите метод, который принимает два массива
-     * целых чисел и возвращает их пересечение.
+     * 8. Напишите метод, который принимает два массива целых чисел и возвращает их пересечение.
      */
     public static int[] findArrayIntersection(int[] array1, int[] array2) {
         // TODO: реализовать метод
@@ -124,8 +137,7 @@ public class T5 {
     }
 
     /**
-     * 10. Напишите метод, который принимает массив целых чисел и
-     * возвращает максимальную сумму подмассива (алгоритм Кадане).
+     * 10. Напишите метод, который принимает массив целых чисел и возвращает максимальную сумму подмассива (алгоритм Кадане).
      */
     public static int maxSubarraySum(int[] array) {
         // TODO: реализовать метод
@@ -133,13 +145,14 @@ public class T5 {
     }
 
     public static void main(String[] args) {
-         int[] exampleArray = {1, 2, 5, 54, 65, 1221, 99, 65};
+         int[] exampleArray = {1, 2, 5, 54, 65, 99, 65};
         System.out.println(Arrays.toString(exampleArray));
 
          System.out.println("+1. Напишите метод, который принимает массив целых чисел и возвращает все подмассивы длиной 2: " + Arrays.toString(generateSubArrays(exampleArray)));
-         System.out.println("-2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом: " + isArrayPalindrome(exampleArray));
+         System.out.println("+2. Напишите метод, который принимает массив целых чисел и возвращает true, если массив является палиндромом: " + isArrayPalindrome(exampleArray));
          System.out.println("+3. Напишите метод, который принимает массив целых чисел и возвращает самый часто встречающийся элемент: " + findMostFrequentElement(exampleArray));
          System.out.println("+4. Напишите метод, который принимает массив целых чисел и сортирует его без использования встроенных методов сортировки: " + Arrays.toString(sortArrayManually(exampleArray)));
+         System.out.println("+6. Напишите метод, который принимает массив целых чисел и возвращает новый массив с уникальными элементами: " + Arrays.toString(removeDuplicates(exampleArray)));
          System.out.println("+9. Напишите метод, который принимает массив целых чисел и возвращает true, если в массиве есть дублирующиеся элементы: " + hasDuplicates(exampleArray));
     }
 }

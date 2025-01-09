@@ -6,11 +6,7 @@ public class T3 {
 
 // 1. Напишите метод, который принимает массив целых чисел и возвращает его длину.
     public static int getArrayLength(int[] array) {
-        int count = 0;
-        for (int i = 0; i < array.length; i++) {
-            count++;
-        }
-        return count;
+        return array.length;
     }
 
 // 2. Напишите метод, который принимает массив целых чисел и выводит его элементы в консоль.
@@ -51,8 +47,7 @@ public class T3 {
         return min;
     }
 
-// 6. Напишите метод, который принимает массив целых чисел и возвращает
-     // новый массив, содержащий только чётные элементы.
+// 6. Напишите метод, который принимает массив целых чисел и возвращает новый массив, содержащий только чётные элементы.
     public static int[] filterEvenNumbers(int[] array) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
@@ -72,8 +67,7 @@ public class T3 {
         return evenArr;
     }
 
-// 7. Напишите метод, который принимает массив целых чисел и
-     // возвращает массив в обратном порядке.
+// 7. Напишите метод, который принимает массив целых чисел и возвращает массив в обратном порядке.
     public static int[] reverseArray(int[] array) {
         int[] reverArr = new int[array.length];
         int index = 0;
@@ -84,8 +78,7 @@ public class T3 {
         return reverArr;
     }
 
-// 8. Напишите метод, который принимает массив целых чисел и возвращает true,
-     // если массив отсортирован по возрастанию.
+// 8. Напишите метод, который принимает массив целых чисел и возвращает true, если массив отсортирован по возрастанию.
     public static boolean isArraySorted(int[] array) {
         boolean ordArr = true;
         for (int i = 0; i < array.length; i++) {
@@ -98,8 +91,7 @@ public class T3 {
         return ordArr;
     }
 
-// 9. Напишите метод, который принимает массив целых чисел и возвращает
-     // среднее арифметическое его элементов.
+// 9. Напишите метод, который принимает массив целых чисел и возвращает среднее арифметическое его элементов.
     public static double calculateAverage(int[] array) {
         int sum = 0;
         double mean = 0;
@@ -110,8 +102,7 @@ public class T3 {
         return mean;
     }
 
-// 10. Напишите метод, который принимает массив целых чисел и
-     // возвращает количество чётных чисел в массиве.
+// 10. Напишите метод, который принимает массив целых чисел и возвращает количество чётных чисел в массиве.
     public static int countEvenNumbers(int[] array) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {

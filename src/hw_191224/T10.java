@@ -1,14 +1,17 @@
-package com.app._19_12_2024;
+package hw_191224;
 
 public class T10 {
     public class BooleanArrayTasks {
 
-        /**
-         * 1. Напишите метод, который принимает массив логических значений и возвращает количество значений true.
-         */
+// 1. Напишите метод, который принимает массив логических значений и возвращает количество значений true.
         public static int countTrue(boolean[] array) {
-            // TODO: реализовать метод
-            return 0;
+            int count = 0;
+            for (int i = 0; i < array.length; i++) {
+                if(array[i] == true){
+                    count++;
+                }
+            }
+            return count;
         }
 
         /**
@@ -84,9 +87,8 @@ public class T10 {
         }
 
         public static void main(String[] args) {
-            // Пример вызовов методов (после их реализации)
-            // boolean[] exampleArray = {true, false, true, false, true};
-            // System.out.println(countTrue(exampleArray));
+             boolean[] exampleArray = {true, false, true, false, true};
+             System.out.println(countTrue(exampleArray));
         }
     }
 }
