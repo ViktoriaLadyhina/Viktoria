@@ -134,12 +134,33 @@ public class T12 {
         return false;
     }
 
-    /**
-     * 10. Напишите метод, который принимает массив строк и массив символов, и возвращает массив строк, содержащих соответствующий символ.
-     */
+// 10. Напишите метод, который принимает массив строк и массив символов, и возвращает массив строк, содержащих соответствующий символ.
     public static String[] getStringsContainingChar(String[] stringArray, char[] charArray) {
-        // TODO: реализовать метод
-        return new String[0];
+        int count = 0;
+        for (int i = 0; i < stringArray.length; i++) {
+            for (int j = 0; j < charArray.length; j++) {
+                for (int k = 0; k < stringArray[i].length(); k++) {
+                    if(i == j && stringArray[i].charAt(k) == charArray[j]){
+                        count++;
+                        break;
+                    }
+                }
+
+            }
+        }
+        String[] strArr = new String[count];
+        int index = 0;
+        for (int i = 0; i < stringArray.length; i++) {
+            for (int j = 0; j < charArray.length; j++) {
+                for (int k = 0; k < stringArray[i].length(); k++) {
+                    if(i == j && stringArray[i].charAt(k) == charArray[j]){
+                    strArr[index] = stringArray[i];
+                    index++;
+                    break;
+                }
+            }
+        }}
+        return strArr;
     }
 
     public static void main(String[] args) {
@@ -163,5 +184,6 @@ public class T12 {
         System.out.println("7. целых чисел и массив символов, и возвращает массив символов, соответствующих четным числам: " + Arrays.toString(getCharsForEvenNumbers(intArray, ch)));
         System.out.println("8. два массива строк и возвращает массив строк, где каждый элемент — это конкатенация строк с одинаковыми индексами из обоих массивов: " + Arrays.toString(concatenateStringArrays(stringArray, stringArray2)));
         System.out.println("9. целых чисел и массив логических значений, и возвращает true, если хотя бы одно число больше 10 и соответствует true: " + hasNumberGreaterThan10MatchingTrue(intArray, bool));
+        System.out.println("10. строк и массив символов, и возвращает массив строк, содержащих соответствующий символ: " + Arrays.toString(getStringsContainingChar(stringArray, ch)));
     }
 }
