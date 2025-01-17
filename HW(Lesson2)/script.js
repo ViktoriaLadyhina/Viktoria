@@ -1,5 +1,9 @@
 ////// ДЗ
 // проверить слово на полиндром
+// 1 - в задаче повыше учесть еще и регистр букв.
+// Anna !== annA (надо исправить чтобы регистр не вляил на результат)
+console.log("1----------");
+// Средняя задача
 let word = "Шалаш"
 let reversword = ""
 for (let i = word.length-1; i >= 0; i--) {
@@ -10,26 +14,27 @@ if(word.toLowerCase() === reversword.toLowerCase()){
 }else {
     console.log(`Слово ${word} это не полиндром`);
 }
-// 1 - в задаче повыше учесть еще и регистр букв.
-// Anna !== annA (надо исправить чтобы регистр не вляил на результат)
+
+console.log("или");
+console.log(word.split("").reverse().join("").toLowerCase() === word.toLowerCase() ? `Слово ${word} это полиндром` : `Слово ${word} это не полиндром`);
 
 
-console.log("----------");
+console.log("2----------");
 // Средняя задача
 // Напишите программу, которая принимает строку из чисел, разделенных запятыми (например, "1,2,3,4,5") и выводит сумму всех чисел.
 let str = "1,2,3,4,5";
 function sum(str) {
    let tmp = str.split(',');
    let sum = 0;
-for (let i = 0; i < tmp.length; i++) {
-    sum += Number(tmp[i]);
-}
-console.log(sum); 
+    for (let i = 0; i < tmp.length; i++) {
+        sum += Number(tmp[i]);
+    }
+    console.log(sum); 
 }
 sum(str);
 
 
-console.log("----------");
+console.log("3----------");
 // Простая задача
 // Дан массив из строк. Программа должна подсчитать количество слов, которые содержат больше 5 символов.
 let arr = ["apple", "banana", "pear"];
@@ -44,7 +49,7 @@ function calculateTheLengthOfWords(arr){
 }
 calculateTheLengthOfWords(arr)
 
-console.log("----------");
+console.log("4----------");
 // Простая задача
 // Создайте массив чисел от 1 до 20. Выведите все четные числа из этого массива.
 let arr1 = [];
@@ -57,7 +62,7 @@ for (let i = 0; i < arr1.length; i++) {
     }
 }
 
-console.log("----------");
+console.log("5----------");
 // Сложная задача
 // Дана строка из нескольких слов, разделенных пробелами. Напишите программу, которая переворачивает каждое слово в строке и выводит полученный результат.
 let str1 = "apple banana pear";
@@ -70,12 +75,12 @@ rev(str1);
 // Функция reverse() изменяет последовательность элементов в массиве, меняя их порядок на противоположный. 
 // Метод join() объединяет элементы массива обратно в строку.
 
-console.log("----------");
+console.log("6----------");
 // Средняя задача
 // Сгенерируйте массив из 10 случайных чисел от 1 до 100. Найдите максимальное и минимальное число в массиве, а также их разницу.
 let arr2 = [];
 for (let i = 0; i < 10; i++) {
-    let rand = Math.floor(Math.random() * (100 - 1 + 1)) + 1;;
+    let rand = Math.round(Math.random() * 100);
     arr2.push(rand);
 }
 let max = arr2[0];
@@ -91,7 +96,8 @@ for (let i = 0; i < arr2.length; i++) {
 console.log(arr2);
 console.log(`${max} - ${min} = ${max - min}`);
 
-console.log("----------");
+
+console.log("7----------");
 // Сложная задача
 // Дан массив чисел, например [10, 15, 3, 7, 20, 8, 25]. Найдите два числа, сумма которых равна 25, и выведите их. Если таких чисел нет, выведите сообщение об этом.
 let arr3 = [10, 15, 3, 7, 20, 8, 25];
@@ -114,29 +120,29 @@ if (sum1 == 25) {
 }
 
 
-console.log("----------");
+console.log("8----------");
 // Средняя задача
 // Напишите программу, которая принимает строку из букв и цифр (например, "a1b2c3d4"), и создает два массива отдельно с числами и отдельно с буквами из этой строки: [1, 2, 3, 4] [a, b , c, d]
 let str2 = "a1b2c3d4";
 function makesTwoArrays(str){
-let arrStr = [];
-let arrInt = [];
-str = str.split('');
-for (let i = 0; i < str.length; i++) {
-    if(isNaN(str[i])){
-       arrStr.push(str[i]);
-    }else{
+    let arrStr = [];
+    let arrInt = [];
+    str = str.split('');
+    for (let i = 0; i < str.length; i++) {
+        if(isNaN(str[i])){
+        arrStr.push(str[i]);
+        }else{
         arrInt.push(str[i]);
+        }
     }
-}
-console.log(str);
-console.log(arrStr);
-console.log(arrInt);
+    console.log("Исходный массив: " + str);
+    console.log(arrStr);
+    console.log(arrInt);
 }
 makesTwoArrays(str2);
 
 
-console.log("----------");
+console.log("9----------");
 // Сложная задача
 // Дан массив строк, например ["abcd", "def", "ghiab", "jklaf", "asdgdfhfgh"]. Объедините их в одну строку, добавив между ними символ -, но только между строками, где количество букв совпадает.
 let arr4 = ["abcd", "def", "ghiab", "jklaf", "asdgdfhfgh"];
