@@ -1,0 +1,359 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* -----------nav----------- */
+
+nav {
+    padding: 50px 150px;
+    background-color: #404149;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Oswald;
+}
+
+.navbar>li>a {
+    color: white;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 42px;
+
+    display: flex;
+    align-items: center;
+}
+
+.navbar>li>a>i {
+    font-size: 32px;
+    color: red;
+    margin-right: 10px;
+}
+
+.navbar>li>a:hover {
+    color: #7a7a7c;
+}
+
+/* -----------header----------- */
+
+.container {
+    width: 100%;
+    max-width: 1110px;
+}
+
+header {
+    background-image: url("../media/Rectangle.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-size: cover - равномерно увеличивает картинку и обрезает лишнее */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .title_block {
+    padding: 192px 188px 20px 188px;
+    text-align: center;
+    color: white;
+    font-family: Oswald;
+}
+
+header .title_block h1 {
+    font-size: 64px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+/* псевдоэлемент: */
+header .title_block h1::first-line {
+    line-height: 95px;
+}
+
+header .title_block p {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    /* text-transform: uppercase - делает большой регистр букв */
+}
+
+header .info_block {
+    padding: 57px 130px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: Oswald;
+}
+
+/* псевдоэлемент: первая строка: 26*/
+header .info_block>div>p:first-child {
+    color: #F7654A;
+    font-size: 72px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+/* псевдоэлемент: вторая строка: лет*/
+header .info_block>div>p:nth-child(2) {
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+/* псевдоэлемент: последняя строка: на рынке*/
+header .info_block>div>p:last-child {
+    font-size: 18px;
+    font-weight: 500;
+    color: #999999;
+}
+
+/* ----------------our_project----------------- */
+
+.our_project {
+    padding-top: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.our_project h2 {
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 500;
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.arena {
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    gap: 30px;
+    padding-bottom: 200px;
+}
+
+.linie {
+    background-color: #F7654A;
+    width: 55px;
+    height: 6px;
+}
+
+.arena_block img {
+    margin-bottom: 45px;
+}
+
+.arena_block h3 {
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 35.57px;
+    text-align: left;
+    margin: 20px 0 15px;
+}
+
+
+.arena_block p {
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.79px;
+    text-align: left;
+    color: #999999;
+}
+
+/* ----------------add_block----------------- */
+
+.add_block {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #F7654A;
+    height: 181px;
+    padding: 30px 0 45px 0;
+}
+
+.req_form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Oswald;
+    color: #FFFFFF;
+}
+
+.req_form div:first-child h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.req_form div:first-child p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.req_form div:last-child button {
+    padding: 15px 45px;
+    background-color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    font-family: Oswald;
+    cursor: pointer;
+}
+
+/* ----------------about----------------- */
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.about .about_block h2 {
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    color: #000;
+    margin-bottom: 66px;
+}
+
+.about .services {
+    gap: 30px;
+    /* gap - расстояние между элементами */
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+}
+
+#first:hover i {
+    display: none;
+}
+
+.about .services div {
+    background-color: #F7F7F7;
+    text-align: center;
+    padding: 60px 90px;
+}
+
+.about .services>div p {
+    font-size: 21px;
+    font-weight: 500;
+    font-family: Oswald;
+}
+
+.about .services>div i {
+    font-size: 48px;
+    color: #F7654A;
+    margin-bottom: 30px;
+}
+
+/* .services */
+
+/* ----------------kontakt----------------- */
+.kontact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.kontact_block h3 {
+    font-family: Oswald;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    margin: 112px 0 60px 0;
+}
+
+.kont {
+    display: grid;
+    grid-template-columns: repeat(4, 255px);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.kont h4 {
+    font-family: Oswald;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: gray;
+    margin: 36px 0 25px 0;
+}
+
+.kont i {
+    font-size: 48px;
+    color: #F7654A;
+
+}
+
+.kont img {
+    height: 48px;
+}
+
+.kont p {
+    font-family: Oswald;
+    font-size: 24px;
+    line-height: 35.57px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.email {
+    color: #F7654A;
+}
+
+/* ------------footer------------ */
+
+footer {
+    background-color: #404149;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_block {
+    display: flex;
+    justify-content: space-between;
+    height: 82px;
+    text-align: center;
+    align-items: center;
+}
+
+footer>div {
+    font-family: Open Sans;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ------------адаптивная верстка------------ */
+
+@media screen and (max-width: 1200px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 
+@media (max-width: 1200px) and (orientation: portrait) {
+  .navbar {
+    display: none;
+  }
+} */
+
+/* .navbar {
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} */
