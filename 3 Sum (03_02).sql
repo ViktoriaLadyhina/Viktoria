@@ -101,7 +101,7 @@ select * from employee order by salary desc;
 select * from employee where department in ("IT", "Финансы") order by salary desc;
 
 -- 22. Вывести всех сотрудников, у которых зарплата выше 60000, отсортировав по фамилии в алфавитном порядке
-select * from employee where salary > 60000 order by name;
+select * from employee where salary > 60000 order by substring_index(name, ' ', -1);
 
 -- 23. Вывести все уникальные отделы, в которых работают сотрудники
 select distinct department from employee;
