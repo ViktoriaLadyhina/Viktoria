@@ -15,10 +15,11 @@ let foto = product.img;
 let htmlImg = document.querySelector("img")
 htmlImg.setAttribute("src", foto)
 
+let countValue = product.count
 let htmlCount = document.querySelector("span");
 htmlCount.innerText = countValue;
 
-let countValue = !!localStorage.getItem("count") ? localStorage.getItem("count") : 0
+countValue = !!localStorage.getItem("count") ? localStorage.getItem("count") : 0
 htmlCount.innerText = countValue;
 
 let btnPlus = document.querySelector("#plus")
