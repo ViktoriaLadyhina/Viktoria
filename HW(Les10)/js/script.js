@@ -2,7 +2,7 @@ console.log("Homework");
 
 let product = {
     title: "Велосипед",
-    img: "../media/velocipede.jpg",
+    img: "media/velocipede.jpg",
     count: 10,
     favorite: false
 }
@@ -37,9 +37,27 @@ btnMinus.addEventListener("click", function () {
 })
 
 localStorage.setItem("product", JSON.stringify(product))
-let star = document.querySelector(".star")
+let star = document.querySelector("i")
+
+if (localStorage.getItem("starColor" !== null)) {
+    star.setAttribute("data-color", localStorage.getItem("starColor"))
+} else {
+    star.setAttribute("data-color", "dark")
+    localStorage.setItem("starColor", "dark")
+}
+
+// Помогите, пожалуйста, не могу найти ошибку - не сохраняет значение в localStorage: при обновлении всегда значение favorite - false и "starColor" - dark
+
 star.addEventListener("click", function () {
     let jsonProduct = JSON.parse(localStorage.getItem("product"));
     jsonProduct.favorite = !jsonProduct.favorite
-    localStorage.setItem("product", JSON.stringify(jsonProduct))
+    localStorage.setItem("product", JSON.stringify(jsonProduct)) 
+
+    if (star.getAttribute("data-color") === "dark") {
+        star.setAttribute("data-color", "light")
+        localStorage.setItem("starColor", "light") 
+    } else {
+        star.setAttribute("data-color", "dark")
+        localStorage.setItem("starColor", "dark")
+    }
 })

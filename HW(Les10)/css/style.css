@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+[data-color="light"] {
+    --star-color: yellow;
+}
+
+[data-color="dark"] {
+    --star-color: #362500;
+}
+
 .total {
     display: flex;
     justify-content: center;
@@ -19,7 +27,7 @@
 }
 
 .container i {
-    color: #362500;
+    color: var(--star-color);
     display: flex;
     justify-content: flex-end;
     margin: 15px;
