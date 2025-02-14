@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    background-color: rgb(172, 162, 162);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.forma {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.forma button {
+    background-color: rgb(48, 46, 46);
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.forma input {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.person_card {
+    background-color: rgb(48, 46, 46);
+    border-radius: 10px;
+    width: 250px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 5px;
+}
+
+.person_card .title {
+    margin: 5px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.person_card .image {
+    width: 160px;
+    height: 160px;
+    background-color: rgb(172, 162, 162);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.person_card .text {
+    margin: 10px;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.person_card img {
+    width: 155px;
+    height: auto; 
+    max-height: 100% 
+}
