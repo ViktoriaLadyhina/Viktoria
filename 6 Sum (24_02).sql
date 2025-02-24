@@ -203,7 +203,7 @@ from Staff;
     set sql_safe_updates = 0;
 update Staff set experience_level = case
         when age < 25 then 'Junior'
-        when age >= 25 then 'Middle'
+        when age >= 25 and age < 35 then 'Middle'
         when age > 35 then 'Senior'
 	end;
 
@@ -319,7 +319,7 @@ from Staff;
 
 update Staff set username_default = case
         when username is null then 'unknown'
-        when username is not null then 'username'
+        when username is not null then username
 	end;       
     
     select * from Staff; 
