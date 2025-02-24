@@ -196,8 +196,8 @@ alter table Staff add column experience_level varchar(32);
 select age,
 	case 
         when age < 25 then 'Junior'
-        when age >= 25 then 'Middle'
-        when age > 35 then 'Senior'
+        when age >= 25 and age < 35 then 'Middle'
+        when age >= 35 then 'Senior'
 	end as experience_level
 from Staff;
     set sql_safe_updates = 0;
@@ -209,7 +209,7 @@ update Staff set experience_level = case
 
 -- 2. Создать новое поле family_status и заполнить его значением:
 	-- 'Has children', если has_child равно 'Y'.
-	-- 'No children', если has_child равно 'N'.
+	-- 'No children', если has_child равно 'N'.staff
 alter table Staff add column family_status varchar(32);   
 select has_child,
 	case 
@@ -310,16 +310,16 @@ select lastname from Staff where lastname like "A%" or lastname like "L%";
 	-- 	username, если имя пользователя указано.
 	-- 	'unknown', если имя пользователя не указано.
 alter table Staff add column username_default varchar(32);  
-select firstname,
+select username,
 	case 
-        when firstname is null then 'unknown'
-        when firstname is not null then 'username'
+        when username is null then 'unknown'
+        when username is not null then 'username'
 	end as username_default
 from Staff;
 
 update Staff set username_default = case
-        when firstname is null then 'unknown'
-        when firstname is not null then 'username'
+        when username is null then 'unknown'
+        when username is not null then 'username'
 	end;       
     
     select * from Staff; 
