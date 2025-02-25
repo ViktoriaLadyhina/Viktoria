@@ -54,32 +54,34 @@ console.log(pers);
 
 
 console.log("----- Задание 3 -----");
+// 3. Создайте класс Library, который хранит статический массив книг. 
+// Каждая книга – это объект с свойствами title и author. Добавьте 
+// статический метод addBook(book), который добавляет книгу в библиотеку, 
+// и статический метод listBooks(), который выводит список книг в консоль.
 class Library {
     static books = []
-
-    constructor(title, autor) {
-        this.title = title
-        this.autor = autor
-
-        // Library.createbooks.push(this)
-    }
 
     static addBook(book) {
         Library.books.push(book)
     }
-    
+
     static listBooks() {
         console.log(this.books);
     }
 }
 
-// создание экземпляров класса Library
-let book1 = new Library('JavaScript. Полное руководство. Седьмое издание', 'Дэвид Флэнаган')
-let book2 = new Library('Выразительный JavaScript. Современное веб-программирование. Третье издание', 'Марейн Хавербеке')
+// проверка работы метода addBook
+Library.addBook(
+    {
+        Autor: 'Дэвид Флэнаган',
+        Title: 'JavaScript. Полное руководство. Седьмое издание'
+    })
+Library.addBook(
+    {
+        Autor: 'Марейн Хавербеке',
+        Title: 'Выразительный JavaScript. Современное веб-программирование. Третье издание',
 
-// проверка работы маетода addBook
-Library.addBook(book1)
-Library.addBook(book2)
+    })
 
 // проверка работа метода listBooks 
 Library.listBooks()
@@ -102,7 +104,7 @@ class Rectangle {
     set width(value) {
         if (value > 0) {
             this.#width = value
-        } else { 
+        } else {
             throw new Error("Ширина должна быть выше нуля")
         }
     }
@@ -128,7 +130,7 @@ class Rectangle {
 let rectangle = new Rectangle(215, 50)
 
 // проверка работы set width 
-rectangle.width = 115 
+rectangle.width = 115
 
 // проверка работы set height
 rectangle.height = 100
@@ -151,7 +153,7 @@ class BankAccount {
     }
 
     // метод депозита ----??
-    set balance(value){ 
+    set balance(value) {
         this.#balance = value
     }
 
